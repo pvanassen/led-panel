@@ -8,7 +8,7 @@ RUN java -cp christmas-tree-animation-morning-glory.jar io.micronaut.graal.refle
              --report-unsupported-elements-at-runtime \
              -H:ReflectionConfigurationFiles=target/reflect.json \
              -H:EnableURLProtocols=http \
-             -H:IncludeResources="logback.xml|application.yml|META-INF/services/*.*|mask-.*.png" \
+             -H:IncludeResources="logback.xml|application.yml|META-INF/services/*.*|mask-.*.png|pool.png" \
              -H:Name=christmas-tree-animation-morning-glory \
              -H:Class=nl.pvanassen.christmas.tree.animation.morningglory.Application \
              -H:+ReportUnsupportedElementsAtRuntime \
