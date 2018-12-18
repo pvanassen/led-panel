@@ -41,9 +41,4 @@ class MorningGlory(private val canvas: Canvas): Animation {
 
         return canvas.getValues()
     }
-
-    companion object {
-        private const val SCALE = 0.04
-        private const val Z_SCALE = 0.00005
-    }
 }
