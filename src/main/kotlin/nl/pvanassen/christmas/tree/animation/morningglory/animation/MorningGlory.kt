@@ -23,19 +23,21 @@ class MorningGlory(private val canvas: Canvas): Animation {
         } catch (e: IOException) {
             throw UncheckedIOException(e)
         }
-        x = -(poolImage.width / 2)
+        x = (poolImage.width / 2)
     }
 
     override fun getFrame(seed:Long, frame:Int, nsPerFrame:Int): ByteArray {
 
         canvas.setImage(x, 0, poolImage)
 
+        System.out.println("X: $x, left: $left, frame: $frame")
+
         if (left) {
             x--
         } else {
             x++
         }
-        if (x < -(poolImage.width - canvas.canvas.width) || x > 0) {
+        if (x > (poolImage.width - canvas.canvas.width) || x < 0) {
             left = !left
         }
 
