@@ -30,8 +30,6 @@ class MorningGlory(private val canvas: Canvas): Animation {
 
         canvas.setImage(x, 0, poolImage)
 
-        System.out.println("X: $x, left: $left, frame: $frame")
-
         if (left) {
             x--
         } else {
