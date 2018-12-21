@@ -5,6 +5,7 @@ import com.oracle.svm.core.annotate.RecomputeFieldValue;
 import com.oracle.svm.core.annotate.RecomputeFieldValue.Kind;
 import com.oracle.svm.core.annotate.Substitute;
 import com.oracle.svm.core.annotate.TargetClass;
+import io.micronaut.context.AbstractBeanDefinition;
 import io.netty.handler.codec.compression.JdkZlibDecoder;
 import io.netty.handler.codec.compression.JdkZlibEncoder;
 import io.netty.handler.codec.compression.ZlibDecoder;
@@ -12,6 +13,8 @@ import io.netty.handler.codec.compression.ZlibEncoder;
 import io.netty.handler.codec.compression.ZlibWrapper;
 import io.netty.util.internal.logging.InternalLoggerFactory;
 import io.netty.util.internal.logging.JdkLoggerFactory;
+
+import java.lang.reflect.Modifier;
 
 @TargetClass(InternalLoggerFactory.class)
 final class Target_io_netty_util_internal_logging_InternalLoggerFactory {
@@ -65,6 +68,19 @@ final class Target_io_netty_handler_codec_compression_ZlibCodecFactory {
     @Substitute
     public static ZlibDecoder newZlibDecoder(ZlibWrapper wrapper) {
         return new JdkZlibDecoder(wrapper);
+    }
+
+}
+
+@TargetClass(AbstractBeanDefinition.class)
+final class Target_io_micronaut_context_AbstractBeanDefinition_isInnerConfiguration {
+
+    @Substitute
+    private boolean isInnerConfiguration(Class argumentType) {
+        return argumentType.getName().endsWith("Configuration") &&
+                !argumentType.isEnum() &&
+                Modifier.isPublic(argumentType.getModifiers()) && Modifier.isStatic(argumentType.getModifiers()) &&
+                argumentType.getName().indexOf('$') > -1;
     }
 
 }
