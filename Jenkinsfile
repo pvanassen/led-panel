@@ -53,8 +53,11 @@ pipeline {
                 stage ('Docker snapshot') {
                     steps {
                         script {
-                            docker.build "christmas-tree-animation-morning-glory:$BUILD_NUMBER"
-                            docker.build "christmas-tree-animation-morning-glory:snapshot"
+                            def pom = readMavenPom file: 'pom.xml'
+                            def name = pom.artifactId
+                            def image = docker.build "$DOCKER_REPO/$name:$BUILD_NUMBER"
+                            image.push()
+                            image.push("snapshot")
                         }
                     }
                 }
@@ -73,7 +76,9 @@ pipeline {
                 stage ('Docker latest') {
                     steps {
                         script {
-                            def image = docker.build "$DOCKER_REPO/christmas-tree-animation-morning-glory:latest"
+                            def pom = readMavenPom file: 'pom.xml'
+                            def name = pom.artifactId
+                            def image = docker.build "$DOCKER_REPO/$name:latest"
                             image.push()
                         }
                     }
