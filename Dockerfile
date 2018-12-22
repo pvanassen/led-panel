@@ -1,9 +1,10 @@
-FROM oracle/graalvm-ce:1.0.0-rc9
+FROM oracle/graalvm-ce:1.0.0-rc10
 EXPOSE 8080
 COPY target/christmas-tree-animation-morning-glory-*.jar christmas-tree-animation-morning-glory.jar
 ADD . target
 RUN java -cp christmas-tree-animation-morning-glory.jar io.micronaut.graal.reflect.GraalClassLoadingAnalyzer \
     && native-image --no-server \
+             --allow-incomplete-classpath \
              --class-path christmas-tree-animation-morning-glory.jar \
              --report-unsupported-elements-at-runtime \
              -H:ReflectionConfigurationFiles=target/reflect.json \
