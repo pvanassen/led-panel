@@ -52,7 +52,7 @@ pipeline {
                 }
                 stage ('Docker snapshot') {
                     steps {
-                        lock (label: 'graalvm-native') {
+                        lock (resource: 'graalvm-native') {
                             script {
                                 def pom = readMavenPom file: 'pom.xml'
                                 def name = pom.artifactId
@@ -76,7 +76,7 @@ pipeline {
                 }
                 stage ('Docker latest') {
                     steps {
-                        lock (label: 'graalvm-native') {
+                        lock (resource: 'graalvm-native') {
                             script {
                                 def pom = readMavenPom file: 'pom.xml'
                                 def name = pom.artifactId
