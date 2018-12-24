@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: nl.pvanassen.christmas.tree.animation.sunset
+---
+testFramework: spek
+sourceLanguage: kotlin
