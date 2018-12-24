@@ -13,7 +13,7 @@ class Sunrise(private val canvas: Canvas): Animation {
 
     private val sunrise: BufferedImage
 
-    private val waitFrames = 5
+    private val waitFrames = 4
 
     private val frames:Int
 
@@ -25,7 +25,7 @@ class Sunrise(private val canvas: Canvas): Animation {
         } catch (e: IOException) {
             throw UncheckedIOException(e)
         }
-        frames = sunrise.height + canvas.canvas.height * waitFrames
+        frames = sunrise.height * waitFrames
 
         reset()
     }
@@ -48,7 +48,7 @@ class Sunrise(private val canvas: Canvas): Animation {
 
     override fun isFixedTimeAnimation() = true
 
-    fun reset() {
-        y = 0
+    private fun reset() {
+        y = -canvas.canvas.height
     }
 }
