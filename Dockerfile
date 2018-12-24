@@ -9,7 +9,7 @@ RUN java -cp christmas-tree-animation-sunrise.jar io.micronaut.graal.reflect.Gra
              --report-unsupported-elements-at-runtime \
              -H:ReflectionConfigurationFiles=target/reflect.json \
              -H:EnableURLProtocols=http \
-             -H:IncludeResources="logback.xml|application.yml|META-INF/services/*.*|mask-.*.png" \
+             -H:IncludeResources="logback.xml|application.yml|META-INF/services/*.*|mask-.*.png|sunrise.png" \
              -H:Name=christmas-tree-animation-sunrise \
              -H:Class=nl.pvanassen.christmas.tree.animation.sunrise.Application \
              -H:+ReportUnsupportedElementsAtRuntime \
