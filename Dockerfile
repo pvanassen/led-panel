@@ -9,7 +9,7 @@ RUN java -cp christmas-tree-animation-fireworks.jar io.micronaut.graal.reflect.G
              --report-unsupported-elements-at-runtime \
              -H:ReflectionConfigurationFiles=target/reflect.json \
              -H:EnableURLProtocols=http \
-             -H:IncludeResources="logback.xml|application.yml|META-INF/services/*.*|mask-.*.png|fireworks*.png" \
+             -H:IncludeResources="logback.xml|application.yml|META-INF/services/*.*|mask-.*.png|firework*.png" \
              -H:Name=christmas-tree-animation-fireworks \
              -H:Class=nl.pvanassen.christmas.tree.animation.fireworks.Application \
              -H:+ReportUnsupportedElementsAtRuntime \
