@@ -30,7 +30,7 @@ class Fireworks(private val canvas: Canvas, private val treeModel:TreeModel): An
 
     private var x = 0
 
-    private var waitFrames = random.nextInt(2000) + 2000
+    private var waitFrames = random.nextInt(50) + 50
 
     private var frames:Int = (startY + 50) + waitFrames
 
