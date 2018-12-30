@@ -20,7 +20,6 @@ class Fireworks(private val canvas: Canvas, private val treeModel:TreeModel): An
 
     private var fireworkImage: BufferedImage
 
-
     private var scale:Float = 0.01f
 
     private var tail:Boolean = true
@@ -31,7 +30,9 @@ class Fireworks(private val canvas: Canvas, private val treeModel:TreeModel): An
 
     private var x = 0
 
-    private val frames:Int = (startY + 50)
+    private var waitFrames = random.nextInt(2000) + 2000
+
+    private var frames:Int = (startY + 50) + waitFrames
 
     init {
         try {
@@ -45,6 +46,9 @@ class Fireworks(private val canvas: Canvas, private val treeModel:TreeModel): An
     }
 
     override fun getFrame(seed:Long, frame:Int, nsPerFrame:Int): ByteArray {
+        if (frame < waitFrames) {
+            return canvas.getValues()
+        }
         if (tail) {
             if (y <= 0) {
                 (0 until treeModel.ledsPerStrip).forEach {pixel ->
@@ -66,6 +70,7 @@ class Fireworks(private val canvas: Canvas, private val treeModel:TreeModel): An
                 y = startY
                 fireworkImage = fireworkImages[random.nextInt(fireworkImages.size)]
                 x = random.nextInt(3)
+                waitFrames = random.nextInt(2000) + 2000
             }
             scale += 0.02f
 
