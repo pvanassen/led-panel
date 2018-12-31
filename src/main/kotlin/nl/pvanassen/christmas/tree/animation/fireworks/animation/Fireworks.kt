@@ -22,7 +22,23 @@ class Fireworks(private val canvas: Canvas, private val treeModel:TreeModel): An
 
     init {
         try {
-            fireworkImages = arrayOf("/firework-gold.png", "/firework-multi.png", "/firework-red.png", "/firework-red-blue.png")
+            fireworkImages = arrayOf("/firework-blue-1.png",
+                    "/firework-gold-1.png",
+                    "/firework-gold-2.png",
+                    "/firework-gold-3.png",
+                    "/firework-gold-4.png",
+                    "/firework-green-1.png",
+                    "/firework-multi-1.png",
+                    "/firework-multi-2.png",
+                    "/firework-multi-3.png",
+                    "/firework-multi-4.png",
+                    "/firework-multi-5.png",
+                    "/firework-multi-6.png",
+                    "/firework-multi-7.png",
+                    "/firework-multi-8.png",
+                    "/firework-purple-1.png",
+                    "/firework-purple-2.png",
+                    "/firework-red-1.png" )
                     .map {ImageIO.read(javaClass.getResourceAsStream(it)) }
                     .toList()
         } catch (e: IOException) {
