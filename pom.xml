@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>nl.pvanassen.christmas.tree</groupId>
     <artifactId>christmas-tree-animation-fireworks</artifactId>
-    <version>-SNAPSHOT</version>
+    <version>1.0.6</version>
     <parent>
         <groupId>nl.pvanassen</groupId>
         <artifactId>parent</artifactId>
