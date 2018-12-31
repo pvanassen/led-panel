@@ -12,75 +12,65 @@ import javax.imageio.ImageIO
 import javax.inject.Singleton
 
 @Singleton
-class Fireworks(private val canvas: Canvas, private val treeModel:TreeModel): Animation {
+class Fireworks(private val canvas: Canvas, private val treeModel:TreeModel): Animation<FireworkState> {
 
     private val random = Random()
 
     private val fireworkImages: List<BufferedImage>
 
-    private var fireworkImage: BufferedImage
-
-    private var scale:Float = 0.01f
-
-    private var tail:Boolean = true
-
     private val startY = treeModel.ledsPerStrip - 1
-
-    private var y = startY
-
-    private var x = 0
-
-    private var waitFrames = random.nextInt(50) + 50
-
-    private var frames:Int = (startY + 50) + waitFrames
 
     init {
         try {
             fireworkImages = arrayOf("/firework-gold.png", "/firework-multi.png", "/firework-red.png", "/firework-red-blue.png")
                     .map {ImageIO.read(javaClass.getResourceAsStream(it)) }
                     .toList()
-            fireworkImage = fireworkImages[0]
         } catch (e: IOException) {
             throw UncheckedIOException(e)
         }
     }
 
-    override fun getFrame(seed:Long, frame:Int, nsPerFrame:Int): ByteArray {
-        if (frame < waitFrames) {
+    override fun getFrame(seed:Long, frame:Int, nsPerFrame:Int, state:FireworkState): ByteArray {
+        (0 until treeModel.ledsPerStrip).forEach {pixel ->
+            (0 until treeModel.strips).forEach { strip ->
+                canvas.setValue(strip, pixel, Color.BLACK.rgb)
+            }
+        }
+        if (frame < state.waitFrames) {
             return canvas.getValues()
         }
-        if (tail) {
-            if (y <= 0) {
+        if (state.tail) {
+            if (state.y <= 0) {
                 (0 until treeModel.ledsPerStrip).forEach {pixel ->
                     (0 until treeModel.strips).forEach { strip ->
                         canvas.setValue(strip, pixel, Color.WHITE.rgb)
                     }
                 }
-                tail = false
+                state.tail = false
             }
             else {
-                (0 until treeModel.ledsPerStrip).forEach { canvas.setValue(7 + x, it, 0) }
-                canvas.setValue(7 + x, y--, Color(169, 105, 67).rgb)
+                (0 until treeModel.ledsPerStrip).forEach { canvas.setValue(7 + state.x, it, 0) }
+                canvas.setValue(7 + state.x, state.y--, Color(169, 105, 67).rgb)
             }
         }
         else {
-            if (scale > 1f) {
-                scale = 0.01f
-                tail = true
-                y = startY
-                fireworkImage = fireworkImages[random.nextInt(fireworkImages.size)]
-                x = random.nextInt(3)
-                waitFrames = random.nextInt(2000) + 2000
-            }
-            scale += 0.02f
+            state.scale += 0.02f
 
-            val img = fireworkImage.scale(scale, scale)
+            val img = state.fireworkImage.scale(state.scale, state.scale)
             canvas.setImage(-((canvas.canvas.width / 2) - (img.width / 2)), -(60 - (img.height / 2)), img)
         }
         return canvas.getValues()
     }
 
-    override fun getFixedTimeAnimationFrames() = frames
+    override fun getFixedTimeAnimationFrames(state:FireworkState):Int {
+        return state.frames
+    }
 
     override fun isFixedTimeAnimation() = true
+
+
+    override fun getStateObject(): FireworkState {
+        val waitFrames = random.nextInt(50) + 20
+        return FireworkState(0.01f, true, startY, fireworkImages[random.nextInt(fireworkImages.size)], random.nextInt(3), waitFrames, (startY + 75) + waitFrames)
+    }
 }
