@@ -57,11 +57,6 @@ class Fireworks(private val canvas: Canvas, private val treeModel:TreeModel): An
         }
         if (state.tail) {
             if (state.y <= 0) {
-                (0 until treeModel.ledsPerStrip).forEach {pixel ->
-                    (0 until treeModel.strips).forEach { strip ->
-                        canvas.setValue(strip, pixel, Color.WHITE.rgb)
-                    }
-                }
                 state.tail = false
             }
             else {
