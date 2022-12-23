@@ -1,5 +1,0 @@
-profile: service
-defaultPackage: nl.pvanassen.christmas.tree.animation.fireworks
----
-testFramework: spek
-sourceLanguage: kotlin

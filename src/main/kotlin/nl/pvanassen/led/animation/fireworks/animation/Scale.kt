@@ -1,4 +1,4 @@
-package nl.pvanassen.christmas.tree.animation.fireworks.animation
+package nl.pvanassen.led.animation.fireworks.animation
 
 import java.awt.image.BufferedImage
 
