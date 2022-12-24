@@ -18,8 +18,8 @@
         <main.class>nl.pvanassen.led.animation.common.ApplicationKt</main.class>
     </properties>
 
-    <name>Fire animation</name>
-    <description>Fire animation for LEDs</description>
+    <name>Firework animation</name>
+    <description>Firework animation for LEDs</description>
     <url>https://github.com/pvanassen/animation-fireworks</url>
 
     <licenses>
@@ -32,8 +32,8 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git@git.pvanassen.nl:pvanassen/animation-fireworkss.git</connection>
-        <developerConnection>scm:git:git@git.pvanassen.nl:pvanassen/animation-fireworkss.git</developerConnection>
+        <connection>scm:git:git@github.com:pvanassen/animation-fireworks.git</connection>
+        <developerConnection>scm:git:git@github.com:pvanassen/animation-fireworks.git</developerConnection>
         <url>https://github.com/pvanassen/animation-common</url>
     </scm>
 
