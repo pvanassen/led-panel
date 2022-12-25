@@ -1,4 +1,4 @@
-package nl.pvanassen.led.animation.lights.animation
+package nl.pvanassen.led.animation.lights
 
 import nl.pvanassen.led.animation.common.canvas.Canvas
 import nl.pvanassen.led.animation.common.model.Animation

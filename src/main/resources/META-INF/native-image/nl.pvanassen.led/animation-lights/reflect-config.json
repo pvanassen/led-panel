@@ -1,13 +1,13 @@
 [
   {
-    "name": "nl.pvanassen.led.animation.lights.animation.LightsFactory",
+    "name": "nl.pvanassen.led.animation.lights.LightsFactory",
     "allPublicMethods": true,
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
   },
   {
-    "name": "nl.pvanassen.led.animation.lights.animation.Lights",
+    "name": "nl.pvanassen.led.animation.lights.Lights",
     "allPublicMethods": true,
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
