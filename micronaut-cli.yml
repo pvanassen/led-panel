@@ -1,5 +1,0 @@
-profile: service
-defaultPackage: nl.pvanassen.christmas.tree.animation.sunrise
----
-testFramework: spek
-sourceLanguage: kotlin

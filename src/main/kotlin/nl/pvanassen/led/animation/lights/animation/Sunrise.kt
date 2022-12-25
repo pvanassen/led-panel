@@ -1,15 +1,13 @@
-package nl.pvanassen.christmas.tree.animation.sunrise.animation
+package nl.pvanassen.led.animation.lights.animation
 
-import nl.pvanassen.christmas.tree.animation.common.model.Animation
-import nl.pvanassen.christmas.tree.canvas.Canvas
+import nl.pvanassen.led.animation.common.canvas.Canvas
+import nl.pvanassen.led.animation.common.model.Animation
 import java.awt.image.BufferedImage
 import java.io.IOException
 import java.io.UncheckedIOException
 import javax.imageio.ImageIO
-import javax.inject.Singleton
 
-@Singleton
-class Sunrise(private val canvas: Canvas): Animation {
+class Sunrise(private val canvas: Canvas): Animation<Any> {
 
     private val sunrise: BufferedImage
 
@@ -30,7 +28,7 @@ class Sunrise(private val canvas: Canvas): Animation {
         reset()
     }
 
-    override fun getFrame(seed:Long, frame:Int, nsPerFrame:Int): ByteArray {
+    override fun getFrame(seed: Long, frame: Int, nsPerFrame: Int, helper: Any): ByteArray {
         canvas.setImage(0, y, sunrise)
 
         if (frame.rem(waitFrames) == 0) {
@@ -44,11 +42,11 @@ class Sunrise(private val canvas: Canvas): Animation {
         return canvas.getValues()
     }
 
-    override fun getFixedTimeAnimationFrames() = frames
+    override fun getFixedTimeAnimationFrames(helper: Any) = frames
 
     override fun isFixedTimeAnimation() = true
 
     private fun reset() {
-        y = -canvas.canvas.height
+        y = -canvas.getHeight()
     }
 }
