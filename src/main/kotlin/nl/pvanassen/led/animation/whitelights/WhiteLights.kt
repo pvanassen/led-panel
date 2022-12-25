@@ -1,14 +1,11 @@
-package nl.pvanassen.christmas.tree.animation.white.lights.animation
+package nl.pvanassen.led.animation.whitelights
 
-import nl.pvanassen.christmas.tree.animation.common.model.Animation
-import nl.pvanassen.christmas.tree.animation.common.model.TreeModel
-import nl.pvanassen.christmas.tree.animation.common.util.ColorUtils
-import nl.pvanassen.christmas.tree.canvas.Canvas
+import nl.pvanassen.led.animation.common.canvas.Canvas
+import nl.pvanassen.led.animation.common.model.Animation
+import nl.pvanassen.led.animation.common.util.ColorUtils
 import java.util.*
-import javax.inject.Singleton
 
-@Singleton
-class Lights(private val canvas: Canvas, private val treeModel: TreeModel): Animation {
+class WhiteLights(private val canvas: Canvas, private val pixels: List<Int>): Animation<Any> {
 
     private val random = Random()
 
@@ -27,16 +24,16 @@ class Lights(private val canvas: Canvas, private val treeModel: TreeModel): Anim
         positions.addAll(createPositions())
     }
 
-    private fun createPositions() = (0 until treeModel.strips).map {
-        val litPixels = arrayOf(random.nextInt(treeModel.ledsPerStrip), random.nextInt(treeModel.ledsPerStrip), random.nextInt(treeModel.ledsPerStrip))
-        (0 until treeModel.ledsPerStrip - 1).map { pixel ->
-            litPixels.contains(pixel)
+    private fun createPositions(): List<List<Boolean>> {
+        return (pixels.indices).map {
+            val litPixels = arrayOf(random.nextInt(pixels[it]), random.nextInt(pixels[it]), random.nextInt(pixels[it]))
+            (0 until pixels[it]).map { pixel ->
+                litPixels.contains(pixel)
+            }
         }
     }
 
-
-
-    override fun getFrame(seed:Long, frame:Int, nsPerFrame:Int): ByteArray {
+    override fun getFrame(seed: Long, frame: Int, nsPerFrame: Int, helper: Any): ByteArray {
         val color = this.color
         secondsSinceReset += nsPerFrame / 1000_000_000.0
 
@@ -51,10 +48,10 @@ class Lights(private val canvas: Canvas, private val treeModel: TreeModel): Anim
             switch = !switch
         }
 
-        (0 until treeModel.strips).forEach {strip ->
+        (pixels.indices).forEach { strip ->
             canvas.setValue(strip, 0, 0)
-            canvas.setValue(strip, treeModel.ledsPerStrip - 1, 0)
-            (0 until treeModel.ledsPerStrip - 1).forEach {pixel ->
+            canvas.setValue(strip, pixels[strip] - 1, 0)
+            (0 until pixels[strip]).map { pixel ->
                 val switchedPixel = if (switch) {
                     pixel + 1
                 }

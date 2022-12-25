@@ -1,5 +1,0 @@
-profile: service
-defaultPackage: nl.pvanassen.christmas.tree.animation.white.lights
----
-testFramework: spek
-sourceLanguage: kotlin
