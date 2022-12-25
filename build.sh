@@ -1,2 +1,2 @@
 #!/bin/sh
-DOCKER_BUILDKIT=1 docker build . -t animation-lights
+DOCKER_BUILDKIT=1 docker build . -t animation-morning-glory

@@ -1,4 +1,4 @@
-package nl.pvanassen.led.animation.morningglory.animation
+package nl.pvanassen.led.animation.morningglory
 
 import nl.pvanassen.led.animation.common.canvas.Canvas
 import nl.pvanassen.led.animation.common.model.Animation
