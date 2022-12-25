@@ -1,13 +1,13 @@
 [
   {
-    "name": "nl.pvanassen.led.animation.lights.animation.SunriseFactory",
+    "name": "nl.pvanassen.led.animation.sunrise.SunriseFactory",
     "allPublicMethods": true,
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
   },
   {
-    "name": "nl.pvanassen.led.animation.lights.animation.Sunrise",
+    "name": "nl.pvanassen.led.animation.sunrise.Sunrise",
     "allPublicMethods": true,
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
