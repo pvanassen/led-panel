@@ -1,0 +1,16 @@
+[
+  {
+    "name": "nl.pvanassen.led.animation.sunset.SunsetFactory",
+    "allPublicMethods": true,
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "nl.pvanassen.led.animation.sunset.Sunset",
+    "allPublicMethods": true,
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  }
+]
