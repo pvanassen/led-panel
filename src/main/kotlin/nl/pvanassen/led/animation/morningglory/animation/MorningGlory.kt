@@ -1,15 +1,13 @@
-package nl.pvanassen.christmas.tree.animation.morningglory.animation
+package nl.pvanassen.led.animation.morningglory.animation
 
-import nl.pvanassen.christmas.tree.animation.common.model.Animation
-import nl.pvanassen.christmas.tree.canvas.Canvas
+import nl.pvanassen.led.animation.common.canvas.Canvas
+import nl.pvanassen.led.animation.common.model.Animation
 import java.awt.image.BufferedImage
 import java.io.IOException
 import java.io.UncheckedIOException
 import javax.imageio.ImageIO
-import javax.inject.Singleton
 
-@Singleton
-class MorningGlory(private val canvas: Canvas): Animation {
+class MorningGlory(private val canvas: Canvas): Animation<Any> {
 
     private val poolImage:BufferedImage
 
@@ -26,8 +24,7 @@ class MorningGlory(private val canvas: Canvas): Animation {
         x = (poolImage.width / 2)
     }
 
-    override fun getFrame(seed:Long, frame:Int, nsPerFrame:Int): ByteArray {
-
+    override fun getFrame(seed: Long, frame: Int, nsPerFrame: Int, helper: Any): ByteArray {
         canvas.setImage(x, 0, poolImage)
 
         if (left) {
@@ -35,7 +32,7 @@ class MorningGlory(private val canvas: Canvas): Animation {
         } else {
             x++
         }
-        if (x > (poolImage.width - canvas.canvas.width) || x < 0) {
+        if (x > (poolImage.width - canvas.getWidth()) || x < 0) {
             left = !left
         }
 

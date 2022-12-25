@@ -1,5 +1,0 @@
-profile: service
-defaultPackage: nl.pvanassen.christmas.tree.animation.morningglory
----
-testFramework: spek
-sourceLanguage: kotlin
