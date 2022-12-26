@@ -1,13 +1,13 @@
 [
   {
-    "name": "nl.pvanassen.led.animation.whitelights.LightsFactory",
+    "name": "nl.pvanassen.led.animation.whitelights.WhiteLightsFactory",
     "allPublicMethods": true,
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
   },
   {
-    "name": "nl.pvanassen.led.animation.whitelights.Lights",
+    "name": "nl.pvanassen.led.animation.whitelights.WhiteLights",
     "allPublicMethods": true,
     "allDeclaredFields": true,
     "allDeclaredMethods": true,

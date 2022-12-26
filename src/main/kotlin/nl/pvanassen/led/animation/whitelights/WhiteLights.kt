@@ -51,7 +51,7 @@ class WhiteLights(private val canvas: Canvas, private val pixels: List<Int>): An
         (pixels.indices).forEach { strip ->
             canvas.setValue(strip, 0, 0)
             canvas.setValue(strip, pixels[strip] - 1, 0)
-            (0 until pixels[strip]).map { pixel ->
+            (0 until pixels[strip] - 1).map { pixel ->
                 val switchedPixel = if (switch) {
                     pixel + 1
                 }
