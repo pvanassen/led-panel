@@ -13,8 +13,8 @@ COPY --from=jar-builder target/**-jar-with-dependencies.jar /build
 
 RUN native-image -jar **-jar-with-dependencies.jar app --no-fallback -H:+ReportExceptionStackTraces
 
-FROM ghcr.io/graalvm/jdk:ol9-java17-22
+FROM ubuntu:latest
 
 COPY --from=builder /build/app /app
 
-ENTRYPOINT ["/app/app"]
+ENTRYPOINT ["/app"]
