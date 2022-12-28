@@ -5,11 +5,14 @@
     <groupId>nl.pvanassen.led</groupId>
     <artifactId>animation-fireworks</artifactId>
     <version>1.6.0-SNAPSHOT</version>
+
     <properties>
         <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <kotlinVersion>1.7.22</kotlinVersion>
         <kotlin.compiler.jvmTarget>17</kotlin.compiler.jvmTarget>
+
+        <animation-common.version>1.6.3</animation-common.version>
 
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
@@ -34,7 +37,7 @@
     <scm>
         <connection>scm:git:git@github.com:pvanassen/animation-fireworks.git</connection>
         <developerConnection>scm:git:git@github.com:pvanassen/animation-fireworks.git</developerConnection>
-        <url>https://github.com/pvanassen/animation-common</url>
+        <url>https://github.com/pvanassen/animation-fireworks</url>
     </scm>
 
     <pluginRepositories>
@@ -70,7 +73,7 @@
         <dependency>
             <groupId>nl.pvanassen.led</groupId>
             <artifactId>animation-common</artifactId>
-            <version>1.6.0-SNAPSHOT</version>
+            <version>${animation-common.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
