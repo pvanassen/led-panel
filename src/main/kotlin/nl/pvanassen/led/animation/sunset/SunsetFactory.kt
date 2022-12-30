@@ -10,5 +10,5 @@ class SunsetFactory: AnimationFactory<Any> {
 
     override fun getAnimation(canvas: Canvas, pixels: List<Int>, config: ApplicationConfig) = Sunset(canvas)
 
-    override fun getRegistrationInfo() = Registration(name = "sunset", type = AnimationType.ON_SHUTDOWN)
+    override fun getRegistrationInfo(config: ApplicationConfig) = Registration(name = "sunset", type = AnimationType.ON_SHUTDOWN)
 }
