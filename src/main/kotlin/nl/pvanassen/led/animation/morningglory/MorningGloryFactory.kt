@@ -9,5 +9,5 @@ class MorningGloryFactory: AnimationFactory<Any> {
 
     override fun getAnimation(canvas: Canvas, pixels: List<Int>, config: ApplicationConfig) = MorningGlory(canvas)
 
-    override fun getRegistrationInfo() = Registration("morning-glory")
+    override fun getRegistrationInfo(config: ApplicationConfig) = Registration("morning-glory")
 }
