@@ -2,6 +2,7 @@ package nl.pvanassen.led.animation.fireworks.animation
 
 import nl.pvanassen.led.animation.common.canvas.Canvas
 import nl.pvanassen.led.animation.common.model.Animation
+import org.slf4j.LoggerFactory
 import java.awt.Color
 import java.awt.image.BufferedImage
 import java.util.*
@@ -30,6 +31,7 @@ class Fireworks(private val canvas: Canvas, private val pixels:List<Int>): Anima
             "/firework-purple-2.png",
             "/firework-red-1.png" )
             .map { ImageIO.read(javaClass.getResourceAsStream(it)) }
+            .map { it.scale(canvas.getWidth(), canvas.getHeight()) }
             .toList()
 
     private val startY = pixels.min() - 1
@@ -40,7 +42,6 @@ class Fireworks(private val canvas: Canvas, private val pixels:List<Int>): Anima
                 canvas.setValue(strip, pixel, Color.BLACK.rgb)
             }
         }
-
         if (frame < helper.waitFrames) {
             return canvas.getValues()
         }
