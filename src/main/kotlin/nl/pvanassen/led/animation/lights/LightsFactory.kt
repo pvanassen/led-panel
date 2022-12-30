@@ -9,5 +9,5 @@ import nl.pvanassen.led.animation.common.model.Registration
 class LightsFactory: AnimationFactory<Any> {
     override fun getAnimation(canvas: Canvas, pixels: List<Int>, config: ApplicationConfig) = Lights(canvas, pixels)
 
-    override fun getRegistrationInfo() = Registration("lights")
+    override fun getRegistrationInfo(config: ApplicationConfig) = Registration("lights")
 }
