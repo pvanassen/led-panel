@@ -9,5 +9,5 @@ class WhiteLightsFactory: AnimationFactory<Any> {
 
     override fun getAnimation(canvas: Canvas, pixels: List<Int>, config: ApplicationConfig) = WhiteLights(canvas, pixels)
 
-    override fun getRegistrationInfo() = Registration("white-lights")
+    override fun getRegistrationInfo(config: ApplicationConfig) = Registration("white-lights")
 }
