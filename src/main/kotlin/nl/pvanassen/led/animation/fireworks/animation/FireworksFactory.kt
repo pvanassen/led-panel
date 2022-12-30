@@ -10,5 +10,5 @@ import nl.pvanassen.led.animation.common.model.Registration
 class FireworksFactory: AnimationFactory<FireworkState> {
     override fun getAnimation(canvas: Canvas, pixels: List<Int>, config: ApplicationConfig): Animation<FireworkState> = Fireworks(canvas, pixels)
 
-    override fun getRegistrationInfo() = Registration("fireworks", AnimationType.TIMED, "0 59 23 31 12 * *")
+    override fun getRegistrationInfo(config: ApplicationConfig) = Registration("fireworks", AnimationType.FIREWORKS)
 }
