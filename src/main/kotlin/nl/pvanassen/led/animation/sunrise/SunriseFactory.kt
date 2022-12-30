@@ -10,5 +10,5 @@ class SunriseFactory: AnimationFactory<Any> {
 
     override fun getAnimation(canvas: Canvas, pixels: List<Int>, config: ApplicationConfig) = Sunrise(canvas)
 
-    override fun getRegistrationInfo() = Registration(name = "sunrise", type = AnimationType.ON_STARTUP)
+    override fun getRegistrationInfo(config: ApplicationConfig) = Registration(name = "sunrise", type = AnimationType.ON_STARTUP)
 }
