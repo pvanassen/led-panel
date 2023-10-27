@@ -4,21 +4,22 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>nl.pvanassen.led</groupId>
     <artifactId>animation-fireworks</artifactId>
-    <version>1.6.0-SNAPSHOT</version>
+    <version>1.7.0</version>
 
     <properties>
         <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kotlinVersion>1.7.22</kotlinVersion>
+        <kotlinVersion>1.9.10</kotlinVersion>
         <kotlin.compiler.jvmTarget>17</kotlin.compiler.jvmTarget>
 
-        <animation-common.version>1.6.9</animation-common.version>
+        <animation-common.version>1.7.0</animation-common.version>
 
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-        <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
-        <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
-        <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+        <maven.surefire.plugin.version>3.2.1</maven.surefire.plugin.version>
+        <maven-gpg-plugin.version>3.1.0</maven-gpg-plugin.version>
         <main.class>nl.pvanassen.led.animation.common.ApplicationKt</main.class>
+        <maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
     </properties>
 
     <name>Firework animation</name>
@@ -180,7 +181,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.6</version>
+                <version>${maven-assembly-plugin.version}</version>
                 <configuration>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
