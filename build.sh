@@ -1,2 +1,2 @@
 #!/bin/sh
-DOCKER_BUILDKIT=1 docker build . -t animation-morning-glory
+docker buildx build . --platform linux/amd64,linux/arm64 -t pvanassen.nl/led/animation-morning-glory:latest --push --progress=plain
