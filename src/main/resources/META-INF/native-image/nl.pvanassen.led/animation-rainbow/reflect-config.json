@@ -1,0 +1,16 @@
+[
+  {
+    "name": "nl.pvanassen.led.animation.rainbow2.Rainbow2Factory",
+    "allPublicMethods": true,
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "nl.pvanassen.led.animation.rainbow2.Rainbow2",
+    "allPublicMethods": true,
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  }
+]
