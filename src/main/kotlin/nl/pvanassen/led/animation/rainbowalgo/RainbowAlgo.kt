@@ -1,10 +1,10 @@
-package nl.pvanassen.led.animation.rainbow2
+package nl.pvanassen.led.animation.rainbowalgo
 
 import nl.pvanassen.led.animation.common.canvas.Canvas
 import nl.pvanassen.led.animation.common.model.Animation
 import nl.pvanassen.led.animation.common.util.ColorUtils.makeColorHSB
 
-class Rainbow2(private val canvas: Canvas, private val pixels: List<Int>) : Animation<Any> {
+class RainbowAlgo(private val canvas: Canvas, private val pixels: List<Int>) : Animation<Any> {
 
     private var cnt: UByte = 0u
 

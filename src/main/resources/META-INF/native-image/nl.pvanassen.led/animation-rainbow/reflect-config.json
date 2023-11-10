@@ -1,13 +1,13 @@
 [
   {
-    "name": "nl.pvanassen.led.animation.rainbow2.Rainbow2Factory",
+    "name": "nl.pvanassen.led.animation.rainbowalgo.RainbowAlgoFactory",
     "allPublicMethods": true,
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
   },
   {
-    "name": "nl.pvanassen.led.animation.rainbow2.Rainbow2",
+    "name": "nl.pvanassen.led.animation.rainbowalgo.RainbowAlgo",
     "allPublicMethods": true,
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
