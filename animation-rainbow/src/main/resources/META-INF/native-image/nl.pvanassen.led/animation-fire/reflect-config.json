@@ -1,13 +1,13 @@
 [
   {
-    "name": "nl.pvanassen.led.animation.rainbow.RainbowFactory",
+    "name": "nl.pvanassen.led.animation.fire.FireFactory",
     "allPublicMethods": true,
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
   },
   {
-    "name": "nl.pvanassen.led.animation.rainbow.Rainbow",
+    "name": "nl.pvanassen.led.animation.fire.Fire",
     "allPublicMethods": true,
     "allDeclaredFields": true,
     "allDeclaredMethods": true,

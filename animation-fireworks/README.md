@@ -1,3 +1,4 @@
+<<<<<<< HEAD:animation-fireworks/README.md
 # Christmas tree animation: Fireworks
 
 An animation containing fireworks
@@ -18,3 +19,8 @@ For Zipkin:
 For the leds itself: 
 - LED_STRIPS
 - LEDS_PER_STRIP
+=======
+# LED animation: Fire!
+
+A websocket client serving n seconds of fire colored leds
+>>>>>>> animation-fire/master:README.md

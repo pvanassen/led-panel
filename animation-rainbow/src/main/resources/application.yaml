@@ -1,7 +1,14 @@
 app:
+<<<<<<< HEAD:animation-rainbow/src/main/resources/application.yaml
   animation-factory: nl.pvanassen.led.animation.rainbow.RainbowFactory
   controller:
     host: "$CONTROLLER:localhost"
     port: "$PORT:8080"
   name: "$NAME:rainbow"
   scale: "$SCALE:0.009"
+=======
+  animation-factory: nl.pvanassen.led.animation.fire.FireFactory
+  controller:
+    host: "$CONTROLLER:localhost"
+    port: "$PORT:8080"
+>>>>>>> animation-fire/master:src/main/resources/application.yaml
