@@ -1,0 +1,16 @@
+[
+  {
+    "name": "nl.pvanassen.led.animation.christmastree.ChristmasTreeFactory",
+    "allPublicMethods": true,
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "nl.pvanassen.led.animation.christmastree.ChristmasTree",
+    "allPublicMethods": true,
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  }
+]
