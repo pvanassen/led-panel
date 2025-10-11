@@ -1,0 +1,7 @@
+app:
+  animation-factory: nl.pvanassen.led.animation.rainbowalgo.RainbowAlgoFactory
+  controller:
+    host: "$CONTROLLER:localhost"
+    port: "$PORT:8080"
+  name: "$NAME:rainbow-algo"
+  scale: "$SCALE:0.009"
