@@ -1,0 +1,5 @@
+app:
+  animation-factory: nl.pvanassen.led.animation.sunset.SunsetFactory
+  controller:
+    host: "$CONTROLLER:localhost"
+    port: "$PORT:8080"
