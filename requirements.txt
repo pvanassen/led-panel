@@ -1,0 +1,4 @@
+flask>=3.0.0
+adafruit-circuitpython-bh1750
+adafruit-circuitpython-dht
+RPi.GPIO
