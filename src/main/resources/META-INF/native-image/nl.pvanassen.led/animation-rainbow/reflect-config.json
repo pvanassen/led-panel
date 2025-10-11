@@ -1,0 +1,16 @@
+[
+  {
+    "name": "nl.pvanassen.led.animation.rainbow.RainbowFactory",
+    "allPublicMethods": true,
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "nl.pvanassen.led.animation.rainbow.Rainbow",
+    "allPublicMethods": true,
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  }
+]
