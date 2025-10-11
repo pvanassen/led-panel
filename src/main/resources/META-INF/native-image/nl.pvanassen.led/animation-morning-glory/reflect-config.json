@@ -1,0 +1,16 @@
+[
+  {
+    "name": "nl.pvanassen.led.animation.morningglory.MorningGloryFactory",
+    "allPublicMethods": true,
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "nl.pvanassen.led.animation.morningglory.MorningGlory",
+    "allPublicMethods": true,
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  }
+]
