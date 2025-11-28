@@ -1,2 +1,2 @@
 #!/bin/sh
-docker buildx build . --platform linux/arm64 -t pvanassen.nl/led/led-sensor:latest --pull --push --progress=plain
+podman build . --platform linux/arm/v7 -t pvanassen.nl/led/led-sensor:latest --pull --progress=plain
