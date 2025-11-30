@@ -53,11 +53,10 @@ def off(strip):
 
 @app.route("/state", methods=['POST'])
 def state():
-    b = request.files["b"]
-    if b:
-        state_data = bytearray(b.stream())
-        for strip in range(len(strips)):
-            pi.set_PWM_dutycycle(int(strips[strip]), state_data[strip])
+    state_data = request.form["b"].encode()
+    for strip in range(len(strips)):
+        pi.set_PWM_dutycycle(int(strips[strip]), state_data[strip])
+    return Response('{"result":true}', mimetype='application/json')
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8090)
+    app.run(host='0.0.0.0', port=8090, debug=True)
