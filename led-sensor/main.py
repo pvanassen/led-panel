@@ -1,5 +1,4 @@
-from flask import Flask, Response
-import sys
+from flask import Flask, Response, request
 import pigpio
 import DHT
 import bh1750
@@ -18,7 +17,6 @@ strips = [16, 20, 21, 26, 19, 13, 6, 5]
 def main():
     lux = sensor.lux
     dht_data = dht.read()
-    print(str(dht_data))
     humi = '{0:0.1f}'.format(dht_data[3])
     temp = '{0:0.1f}'.format(dht_data[4])
     lux = "{0:0.1f}".format(lux)
@@ -52,6 +50,14 @@ def off(strip):
         for gpio in strips:
             pi.set_PWM_dutycycle(gpio, 0)
     return Response('{"result":true}', mimetype='application/json')
+
+@app.route("/state", methods=['POST'])
+def state():
+    b = request.files["b"]
+    if b:
+        state_data = bytearray(b.stream())
+        for strip in range(len(strips)):
+            pi.set_PWM_dutycycle(int(strips[strip]), state_data[strip])
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8090)
